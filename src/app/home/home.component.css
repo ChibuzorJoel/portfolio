@@ -1,0 +1,16 @@
+error {
+    color: red;
+    font-size: 0.9rem;
+    margin-top: 5px;
+  }
+  
+  .success {
+    color: green;
+    font-size: 0.9rem;
+    margin-top: 5px;
+  }
+  
+  input.ng-touched.ng-invalid,
+  textarea.ng-touched.ng-invalid {
+    border: 1px solid red;
+  }
