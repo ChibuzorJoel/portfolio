@@ -722,20 +722,28 @@
             <!-- contact form -->
             <div class="col-md-12 col-xs-12 spaceup">
               <div class="form-group contact animfadeInUpBig" data-time="2200">
-                <form action="#" class="row" id="form1" method="post" name="form1">
-                  <input id="name" name="name" placeholder="your name" type="text"> <input id="email" name="email"
-                    placeholder="your e-mail" type="text">
-                  <div class="error" id="error_email">Please check your email</div>
-                  <textarea cols="50" id="message" name="message" placeholder="your enquiry" rows="4"></textarea>
-                  <div class="error" id="error_message">Please check your message</div>
-                  <div class="success" id="mail_success">Thank you. Your message has been sent.</div>
-                  <div class="error" id="mail_failed">Error, email not sent</div>
-                  <a class="modernbutton button spaceup animfadeInUpBig" data-time="2000" id="send">SEND</a>
-                  <a class="modernbutton button animfadeInUpBig" data-time="1500" href="../../assets/img/jtech.docx"
-                    download="My_CV.pdf">
+                <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="row" id="form1">
+                  <input formControlName="name" id="name" name="name" placeholder="Your Name" type="text">
+                  <div class="error" *ngIf="f['name'].touched && f['name'].invalid">Please check your name</div>
+                
+                  <input formControlName="email" id="email" name="email" placeholder="Your E-mail" type="email">
+                  <div class="error" *ngIf="f['email'].touched && f['email'].invalid">Please check your email</div>
+                
+                  <textarea formControlName="message" id="message" name="message" placeholder="Your Enquiry" rows="4"></textarea>
+                  <div class="error" *ngIf="f['message'].touched && f['message'].invalid">Please check your message</div>
+                
+                  <div class="success" *ngIf="mailSuccess">Thank you. Your message has been sent.</div>
+                  <div class="error" *ngIf="mailFailed">Error, email not sent.</div>
+                
+                  <button type="submit" [disabled]="isSubmitting" class="modernbutton button spaceup animfadeInUpBig" data-time="2000">
+                    SEND
+                  </button>
+                
+                  <a class="modernbutton button animfadeInUpBig" data-time="1500" href="../../assets/img/jtech.docx" download="My_CV.pdf">
                     DOWNLOAD MY CV
                   </a>
                 </form>
+                
               </div>
             </div><!-- contact form end -->
 

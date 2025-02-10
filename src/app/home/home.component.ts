@@ -1,53 +1,54 @@
 import { Component } from '@angular/core';
-
-
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ContactService } from '../services/contact.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-  formData = {
-    name: '',
-    email: '',
-    message: '',
-  };
-
+  contactForm: FormGroup;
   mailSuccess = false;
   mailFailed = false;
-  isSubmitting = false; // To disable the button while submitting
+  isSubmitting = false;
 
-  async onSubmit(form: any) {
-    if (form.valid) {
-      this.isSubmitting = true; // Disable the button
+  constructor(private fb: FormBuilder, private contactService: ContactService) {
+    this.contactForm = this.fb.group({
+      name: ['', [Validators.required, Validators.minLength(3)]],
+      email: ['', [Validators.required, Validators.email]],
+      message: ['', [Validators.required, Validators.minLength(10)]],
+    });
+  }
+
+  get f() {
+    return this.contactForm.controls;
+  }
+
+  async onSubmit() {
+    if (this.contactForm.valid) {
+      this.isSubmitting = true;
       try {
-        await this.sendEmail(this.formData);
-        this.mailSuccess = true; // Show success message
+        await this.contactService.sendMessage(this.contactForm.value).toPromise(); // Send to Firebase
+        this.mailSuccess = true;
         this.mailFailed = false;
         console.log('Email sent successfully!');
-        form.resetForm(); // Reset the form
+        this.contactForm.reset();
       } catch (error) {
         this.mailSuccess = false;
-        this.mailFailed = true; // Show error message
+        this.mailFailed = true;
         console.error('Failed to send email:', error);
       } finally {
-        this.isSubmitting = false; // Re-enable the button
+        this.isSubmitting = false;
       }
-    } else {
-      console.error('Form validation failed');
-      this.mailSuccess = false;
-      this.mailFailed = false;
     }
   }
 
   sendEmail(data: any): Promise<void> {
-    // Mock API call to simulate email sending
     return new Promise((resolve, reject) => {
       setTimeout(() => {
-        // Simulate success or failure randomly
         if (Math.random() > 0.5) resolve();
         else reject('Email sending failed due to server error.');
-      }, 1000); // Simulate network delay
+      }, 1000);
     });
   }
 }
