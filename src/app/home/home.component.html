@@ -105,8 +105,8 @@
         <div id="soc-icon">
           <!-- <a class="glyph-icon flaticon-facebook25" href=""></a> -->
           <a class="glyph-icon flaticon-whatsapp" href=""></a>
-          <a class="glyph-icon flaticon-linkedin10"
-            href="https://www.linkedin.com/in/chibuzor-onyedikachi-764548290/" target="_blank"></a>
+          <a class="glyph-icon flaticon-linkedin10" href="https://www.linkedin.com/in/chibuzor-onyedikachi-764548290/"
+            target="_blank"></a>
           <a class="fab fa-whatsapp" href=" https://wa.me/message/JHVJA4F4K7QSE1 " target="_blank"></a>
         </div>
         <div id="footer">©all rights reserved. chibuzor joel 2024</div>
@@ -260,15 +260,18 @@
             </div>
             <div class="col-md-4 spacedown animfadeInUp" data-time="2100">
               <h3 class="spacedown modern-color">Frontend Developer</h3>
-              <p>Creating dynamic, responsive, and user-friendly interfaces using modern frontend technologies such as HTML, CSS, JavaScript, and frameworks like Angular.</p>
+              <p>Creating dynamic, responsive, and user-friendly interfaces using modern frontend technologies such as
+                HTML, CSS, JavaScript, and frameworks like Angular.</p>
             </div>
             <div class="col-md-4 spacedown animfadeInUp" data-time="2200">
               <h3 class="spacedown modern-color">Backend Development</h3>
-              <p>Creating dynamic, responsive, and user-friendly interfaces using modern frontend technologies such as HTML, CSS, JavaScript, and frameworks like Angular.</p>
+              <p>Creating dynamic, responsive, and user-friendly interfaces using modern frontend technologies such as
+                HTML, CSS, JavaScript, and frameworks like Angular.</p>
             </div>
             <div class="col-md-4 spacedown animfadeInUp" data-time="2300">
               <h3 class="spacedown modern-color">Full Stack Solutions</h3>
-              <p>Developing complete web applications from end to end, integrating frontend interfaces with backend services to deliver seamless and scalable solutions.</p>
+              <p>Developing complete web applications from end to end, integrating frontend interfaces with backend
+                services to deliver seamless and scalable solutions.</p>
             </div>
 
             <!-- count stat start -->
@@ -517,32 +520,37 @@
                 exceptional user experiences. My professional journey has been driven by curiosity, continuous learning,
                 and a dedication to quality.
                 <br /><br />
-                Whether crafting intuitive frontend designs, building robust backend architectures, or optimizing performance, 
-                my focus remains on solving real-world problems with clean and maintainable code. My ability to 
-                collaborate effectively and stay on top of emerging trends helps me bring projects to life efficiently 
+                Whether crafting intuitive frontend designs, building robust backend architectures, or optimizing
+                performance,
+                my focus remains on solving real-world problems with clean and maintainable code. My ability to
+                collaborate effectively and stay on top of emerging trends helps me bring projects to life efficiently
                 and creatively.
                 <br /><br />
-                Over the years, I have honed my skills in modern frontend technologies like <strong>HTML5, CSS3, JavaScript, 
-                and Angular</strong>, as well as backend development using <strong>Node.js, Express, and relational databases 
-                like MySQL</strong>. From building interactive user interfaces to implementing seamless integrations with 
+                Over the years, I have honed my skills in modern frontend technologies like <strong>HTML5, CSS3,
+                  JavaScript,
+                  and Angular</strong>, as well as backend development using <strong>Node.js, Express, and relational
+                  databases
+                  like MySQL</strong>. From building interactive user interfaces to implementing seamless integrations
+                with
                 backend services and APIs, I aim to deliver products that not only meet but exceed user expectations.
                 <br /><br />
-                My approach to development emphasizes user-centric design, scalability, accessibility, and adherence to 
-                best practices, ensuring every project is inclusive, robust, and intuitive. I thrive on transforming complex 
-                requirements into elegant solutions and working collaboratively within multidisciplinary teams to 
+                My approach to development emphasizes user-centric design, scalability, accessibility, and adherence to
+                best practices, ensuring every project is inclusive, robust, and intuitive. I thrive on transforming
+                complex
+                requirements into elegant solutions and working collaboratively within multidisciplinary teams to
                 achieve project goals.
                 <br /><br />
                 <strong>Key Skills:</strong>
-                <ul>
-                    <li>Responsive and adaptive design for web and mobile platforms</li>
-                    <li>Performance optimization and code refactoring</li>
-                    <li>Backend development with Node.js, Express, and database design</li>
-                    <li>Cross-browser compatibility and debugging</li>
-                    <li>Version control with Git and team workflows</li>
-                    <li>Proficiency in frameworks such as Angular and backend technologies</li>
-                </ul>
-            
-            
+              <ul>
+                <li>Responsive and adaptive design for web and mobile platforms</li>
+                <li>Performance optimization and code refactoring</li>
+                <li>Backend development with Node.js, Express, and database design</li>
+                <li>Cross-browser compatibility and debugging</li>
+                <li>Version control with Git and team workflows</li>
+                <li>Proficiency in frameworks such as Angular and backend technologies</li>
+              </ul>
+
+
 
 
             </div>
@@ -558,7 +566,8 @@
                     <li><span class="expand editorial"></span><em><strong>Node.js & Express</strong></em></li>
                     <li><span class="expand frontend"></span><em><strong>RESTful API Development</strong></em></li>
                     <li><span class="expand editorial"></span><em><strong>Responsive Design</strong></em></li>
-                    <li><span class="expand frontend"></span><em><strong>Database Management (MySQL, MongoDB)</strong></em></li>
+                    <li><span class="expand frontend"></span><em><strong>Database Management (MySQL,
+                          MongoDB)</strong></em></li>
                     <li><span class="expand frontend"></span><em><strong>Version Control with Git</strong></em></li>
                   </ul>
                 </div>
@@ -725,25 +734,36 @@
                 <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="row" id="form1">
                   <input formControlName="name" id="name" name="name" placeholder="Your Name" type="text">
                   <div class="error" *ngIf="f['name'].touched && f['name'].invalid">Please check your name</div>
-                
+
                   <input formControlName="email" id="email" name="email" placeholder="Your E-mail" type="email">
                   <div class="error" *ngIf="f['email'].touched && f['email'].invalid">Please check your email</div>
-                
-                  <textarea formControlName="message" id="message" name="message" placeholder="Your Enquiry" rows="4"></textarea>
-                  <div class="error" *ngIf="f['message'].touched && f['message'].invalid">Please check your message</div>
-                
-                  <div class="success" *ngIf="mailSuccess">Thank you. Your message has been sent.</div>
-                  <div class="error" *ngIf="mailFailed">Error, email not sent.</div>
-                
-                  <button type="submit" [disabled]="isSubmitting" class="modernbutton button spaceup animfadeInUpBig" data-time="2000">
+
+                  <textarea formControlName="message" id="message" name="message" placeholder="Your Enquiry"
+                    rows="4"></textarea>
+                  <div class="error" *ngIf="f['message'].touched && f['message'].invalid">Please check your message
+                  </div>
+
+                 
+
+                  <!-- Success & Error Messages -->
+                  <div class="alert alert-success fade-in" *ngIf="mailSuccess">
+                    ✅ Thank you! Your message has been sent.
+                  </div>
+                  <div class="alert alert-danger fade-in" *ngIf="mailFailed">
+                    ❌ Error! Your message could not be sent. Please try again.
+                  </div>
+
+                  <button type="submit" [disabled]="isSubmitting" class="modernbutton button spaceup animfadeInUpBig"
+                    data-time="2000">
                     SEND
                   </button>
-                
-                  <a class="modernbutton button animfadeInUpBig" data-time="1500" href="../../assets/img/jtech.docx" download="My_CV.pdf">
+
+                  <a class="modernbutton button animfadeInUpBig" data-time="1500" href="../../assets/img/jtech.docx"
+                    download="My_CV.pdf">
                     DOWNLOAD MY CV
                   </a>
                 </form>
-                
+
               </div>
             </div><!-- contact form end -->
 
