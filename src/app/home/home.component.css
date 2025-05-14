@@ -49,4 +49,32 @@ error {
       opacity: 1;
     }
   }
+  .bgintro {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    z-index: -1;
+  }
+  
+  /* Frame-specific backgrounds */
+  .bg1 {
+    background-image: url('../../assets/img/_MG_6753LK R.jpg');
+  }
+  
+  .bg2 {
+    background-image: url('../../assets/img/_MG_6833DR.jpg');
+  }
+  
+  .bg3 {
+    background-image: url('../../assets/img/_MG_6810HY.jpg');
+  }
+  
+  .bg4 {
+    background-image: url('../../assets/img/_MG_6861CG.jpg');
+  }
   
