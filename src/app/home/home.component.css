@@ -50,48 +50,6 @@ error {
     }
   }
 
- /* Basic layout */
-#boxintro {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-}
-
-.bgintro {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-}
-
-.bgintro img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* Overlay styling */
-.overlayintro {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.4);
-  z-index: 0;
-}
-
-/* Content styling */
-.contentintro {
-  position: relative;
-  z-index: 1;
-  color: #fff;
-  text-align: center;
-  top: 30%;
-}
 
 /* Animations */
 @keyframes fadeBackground {
