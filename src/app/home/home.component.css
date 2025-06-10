@@ -14,24 +14,8 @@ error {
   textarea.ng-touched.ng-invalid {
     border: 1px solid red;
   }
-#boxskip {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  z-index: 9999; /* Ensure it's on top of all other elements */
-}
 
-/* #skipbtn {
-  padding: 10px 20px;
-  font-size: 16px;
-  background-color: #000; 
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  opacity: 0.8;
-  transition: opacity 0.3s ease;
-} */
+
 
 #skipbtn:hover {
   opacity: 1;
@@ -172,12 +156,7 @@ error {
 
   
   
-  #boxskip {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  z-index: 9999;
-}
+  
 
 #skipbtn {
   padding: 10px 20px;
@@ -197,28 +176,7 @@ error {
   }
 }
 /* Base styles for larger screens (already looks good) */
-.taglineintro {
-  font-size: 32px;
-  font-weight: bold;
-  color: #fff;
-  text-align: center;
-  margin-bottom: 10px;
-}
 
-.subheading {
-  font-size: 20px;
-  color: #ddd;
-  text-align: center;
-  line-height: 1.4;
-}
-
-.myname {
-  font-size: 22px;
-  font-weight: 500;
-  color: #fff;
-  text-align: center;
-  margin-top: 15px;
-}
 
 /* MOBILE RESPONSIVE TWEAKS */
 @media screen and (max-width: 600px) {
