@@ -733,73 +733,94 @@
         <!-- portofolio end -->
 
         <!-- contact start -->
-        <div id="contact" class="commonpage">
-          <div class="bgmodern"><img data-time="0" alt="background"
-              src="../../assets/img/_MG_6810HY.jpg"></div>
-          <div class="overlayintropage"></div>
+       <!-- contact start -->
+<!-- contact start -->
+<div id="contact" class="commonpage">
+  <div class="bgmodern">
+    <img data-time="0" alt="background" src="../../assets/img/_MG_6810HY.jpg" />
+  </div>
+  <div class="overlayintropage"></div>
 
-          <div class="contentpage">
+  <div class="contentpage">
+    <div class="col-md-5 col-xs-12 spacedown">
+      <h3 class="animfadeInUpBig" data-time="300">HERE YOU FIND ME</h3>
+      <p class="animfadeInUpBig" data-time="600">36 Ojimi str, OJO Lagos, Nigeria</p>
+    </div>
 
-            <div class="col-md-5 col-xs-12 spacedown">
-              <h3 class="animfadeInUpBig" data-time="300">HERE YOU FIND ME</h3>
-              <p class="animfadeInUpBig" data-time="600">36 Ojimi str, OJO Lagos, Nigeria </p>
-            </div>
+    <div class="col-md-3 col-xs-12 spacedown">
+      <h3 class="animfadeInUpBig" data-time="900">CALL ME</h3>
+      <p class="animfadeInUpBig" data-time="1200">+(234) 903-5188-726</p>
+    </div>
 
-            <div class="col-md-3 col-xs-12 spacedown">
-              <h3 class="animfadeInUpBig" data-time="900">CALL ME</h3>
-              <p class="animfadeInUpBig" data-time="1200">+(234) 903-5188-726</p>
-            </div>
+    <div class="col-md-4 col-xs-12 spacedown">
+      <h3 class="animfadeInUpBig" data-time="1500">EMAIL ME</h3>
+      <p class="animfadeInUpBig" data-time="1800">chibuzoronyedikachi72@gmail.com</p>
+    </div>
 
-            <div class="col-md-4 col-xs-12 spacedown">
-              <h3 class="animfadeInUpBig" data-time="1500">EMAIL ME</h3>
-              <p class="animfadeInUpBig" data-time="1800">chibuzoronyedikachi72@gmail.com</p>
-            </div>
-            <!-- contact form -->
-            <div class="col-md-12 col-xs-12 spaceup">
-              <div class="form-group contact animfadeInUpBig" data-time="2200">
-                <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="row" id="form1">
-                  <input formControlName="name" id="name" name="name" placeholder="Your Name" type="text">
-                  <div class="error" *ngIf="f['name'].touched && f['name'].invalid">Please check your name</div>
+    <!-- contact form -->
+    <div class="col-md-12 col-xs-12 spaceup">
+      <div class="form-group contact animfadeInUpBig" data-time="2200">
+        <form
+          #contactFormRef
+          action="https://formspree.io/f/mdkzqpwr"
+          method="POST"
+          [formGroup]="contactForm"
+          class="row"
+          id="form1"
+          (ngSubmit)="onSubmit()"
+        >
+          <!-- Hidden fields -->
+          <input type="hidden" name="_subject" value="New Contact Form Submission" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_autoresponse" value="Thanks for contacting me! I’ll respond shortly." />
 
-                  <input formControlName="email" id="email" name="email" placeholder="Your E-mail" type="email">
-                  <div class="error" *ngIf="f['email'].touched && f['email'].invalid">Please check your email</div>
+          <!-- Input fields -->
+          <input formControlName="name" name="name" placeholder="Your Name" type="text" required />
+          <div class="error" *ngIf="f['name'].touched && f['name'].invalid">Please check your name</div>
 
-                  <textarea formControlName="message" id="message" name="message" placeholder="Your Enquiry"
-                    rows="4"></textarea>
-                  <div class="error" *ngIf="f['message'].touched && f['message'].invalid">Please check your message
-                  </div>
+          <input formControlName="email" name="email" placeholder="Your E-mail" type="email" required />
+          <div class="error" *ngIf="f['email'].touched && f['email'].invalid">Please check your email</div>
+
+          <textarea formControlName="message" name="message" placeholder="Your Enquiry" rows="4" required></textarea>
+          <div class="error" *ngIf="f['message'].touched && f['message'].invalid">Please check your message</div>
+
+          <!-- Submit -->
+          <button type="submit" class="modernbutton button spaceup animfadeInUpBig" data-time="2000">
+            SEND
+          </button>
+          <div *ngIf="mailSuccess" class="alert alert-success">
+            ✅ Message sent successfully!
+          </div>
+          <div *ngIf="mailFailed" class="alert alert-danger">
+            ❌ Failed to send message. Please try again.
+          </div>
+          <!-- Download CV -->
+          <a
+            class="modernbutton button animfadeInUpBig"
+            data-time="1500"
+            href="../../assets/img/jtech cv.pdf"
+            download="My_CV.pdf"
+          >
+            DOWNLOAD MY CV
+          </a>
+        </form>
+      </div>
+    </div>
+    <!-- contact form end -->
+  </div>
+
+  </div>
 
 
-
-                  <!-- Success & Error Messages -->
-                  <div class="alert alert-success fade-in" *ngIf="mailSuccess">
-                    ✅ Thank you! Your message has been sent.
-                  </div>
-                  <div class="alert alert-danger fade-in" *ngIf="mailFailed">
-                    ❌ Error! Your message could not be sent. Please try again.
-                  </div>
-
-                  <button type="submit" [disabled]="isSubmitting" class="modernbutton button spaceup animfadeInUpBig"
-                    data-time="2000">
-                    SEND
-                  </button>
-
-                  <a class="modernbutton button animfadeInUpBig" data-time="1500" href="../../assets/img/jtech cv.pdf"
-                    download="My_CV.pdf">
-                    DOWNLOAD MY CV
-                  </a>
-                </form>
-
-              </div>
-            </div><!-- contact form end -->
 
           </div>
         </div><!-- contact end -->
       </div><!-- row end -->
     </div><!-- container end  -->
-  </div><!-- wrappermodern end -->
+  <!-- wrappermodern end -->
   <!-- page content end -->
-</div>
+
 <!-- end website -->
 
 <!-- sound start -->
